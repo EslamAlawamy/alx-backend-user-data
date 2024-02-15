@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" module for the API """
+""" Route module for the API """
 import os
 from os import getenv
 from flask import Flask, jsonify, abort, request
@@ -50,7 +50,7 @@ def forbidden(error) -> str:
 
 @app.before_request
 def authenticate_user():
-    """ Authenticates the user before processing a request """
+    """ authenticate user before processing a request """
     if auth:
         excluded_paths = [
             "/api/v1/status/",
